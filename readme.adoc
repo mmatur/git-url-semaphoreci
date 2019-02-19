@@ -1,0 +1,33 @@
+= Git URL SemaphoreCI
+
+`git-url-semaphoreci` is a Go tool that help us to start a find the correct git url from a pull request number.
+
+== Example
+
+[source, bash]
+----
+Git URL SemaphoreCI
+
+Usage: git-url-semaphoreci [flags] <command> [<arguments>]
+
+Use "git-url-semaphoreci <command> --help" for help on any command.
+
+Commands:
+        version                                            Display the version.
+
+Flag's usage: git-url-semaphoreci [--flag=flag_argument] [-f[flag_argument]] ...     set flag_argument to flag(s)
+          or: git-url-semaphoreci [--flag[=true|false| ]] [-f[true|false| ]] ...     set true/false to boolean flag(s)
+
+Flags:
+    --branchname  Branch name to check Token
+    --githubtoken Github Token
+    --label       Label required to get correct ssh-url
+    --owner       Repository owner
+    --repo        Repository name
+-h, --help        Print Help (this message) and exit
+----
+
+[source, bash]
+----
+GITHUB_TOKEN=$GCG_GITHUB_TOKEN SEMAPHORE_GIT_BRANCH=pull-request-824324 git-url-semaphoreci --owner=mmatur --repo=git-url-semaphoreci
+----
